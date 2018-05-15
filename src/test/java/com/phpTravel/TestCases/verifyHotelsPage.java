@@ -1,21 +1,17 @@
 package com.phpTravel.TestCases;
 
-import static org.junit.Assert.assertTrue;
+import com.phpTravel.Pages.hotelsPage;
+import com.phpTravel.Pages.topNavBar;
+import org.junit.*;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.text.SimpleDateFormat;
-import java.time.chrono.ChronoLocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
-import org.junit.*;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
-
-import com.phpTravel.Pages.*;
+import static org.junit.Assert.assertTrue;
 
 
 public class verifyHotelsPage {
@@ -28,7 +24,7 @@ public class verifyHotelsPage {
 	hotelsPage hotelsPage = new hotelsPage(driver);
 	
 	@Before
-	public void setUp() throws Exception {
+	public void setUp() {
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		//driver.manage().window().maximize();
 		driver.get(baseUrl);
@@ -37,7 +33,7 @@ public class verifyHotelsPage {
 	@After
 	public void tearDown() {
 		System.out.println("Fim do Teste");
-		//driver.quit();
+		driver.quit();
 	}
 	
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -51,7 +47,7 @@ public class verifyHotelsPage {
 	
 ////////////////////////////////////////////////////////////////////////////////////////
 	
-@Ignore	@Test //este teste valida que os valores de checkin = hoje e checkout = amanhã
+@Test //este teste valida que os valores de checkin = hoje e checkout = amanhã
 	public void verifyFilterbyDefaultDate() {
 		
 		//obtendo as datas de hoje e amanhã
@@ -86,19 +82,20 @@ public class verifyHotelsPage {
 	
 ////////////////////////////////////////////////////////////////////////////////////////
 	
-@Ignore	@Test //este teste valida o filtro por datas Checkin e Checkout somente
+@Test //este teste valida o filtro por datas Checkin e Checkout somente
 	public void verifyFilterByDate() {
 		topNavBar.clickHotelButton();
+		topNavBar.clickBlogButton();
 		hotelsPage.clickModifyFilterBtn();
-		hotelsPage.fillCheckin("01/04/2018");
-		hotelsPage.fillCheckout("10/04/2018");
+		hotelsPage.fillCheckin("01/08/2018");
+		hotelsPage.fillCheckout("10/08/2018");
 		hotelsPage.clickSearchBtn();
 		//concluir verificacoes aqui depois
 	}
 	
 ////////////////////////////////////////////////////////////////////////////////////////
 	
-	@Test //este teste verifica o filtro de hotéis por estrelas
+	@Ignore @Test //este teste verifica o filtro de hotéis por estrelas
 	public void filterSearchByStarRating() {
 		topNavBar.clickHotelButton();
 		hotelsPage.selectOneStarRating();

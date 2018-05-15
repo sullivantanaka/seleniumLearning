@@ -15,7 +15,7 @@ import com.phpTravel.Pages.topNavBar;
 /**
  * @author tanakasu
  *
- * Estes testes verificam a navegação básica dos botões do menu superior
+ * Estes testes verificam a navega??o b?sica dos bot?es do menu superior
  * 
  */
 public class VerifyHomePage {
@@ -24,8 +24,8 @@ public class VerifyHomePage {
 	WebDriver driver = new ChromeDriver();
 	
 	@Before
-	public void setUp() throws Exception {
-	    //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	public void setUp() {
+	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.get(baseUrl);
 	}
@@ -36,7 +36,7 @@ public class VerifyHomePage {
 		//driver.quit();
 	}
 	
-	@Test //este teste verifica todos os botões do menu superior, abrindo cada página
+	@Test //este teste verifica todos os botoes do menu superior, abrindo cada pagina
 	public void verifyBasicTopBarNavigation() {
 		
 		topNavBar topNavBar = new topNavBar(driver);

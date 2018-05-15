@@ -9,29 +9,29 @@ import org.openqa.selenium.WebDriver;
 /**
  * @author tanakasu
  * 
- * 	Esta classe irá armazenar todos os locators da barra superior
+ * 	Esta classe ira armazenar todos os locators da barra superior
  *
  */
 public class topNavBar {
 
-	WebDriver driver;
+	private WebDriver driver;
 	
 	// definindo os locators
-	By homeButton    = By.cssSelector("a.navbar-brand:nth-child(1)");
-	By hotelButton   = By.cssSelector("li.main-lnk:nth-child(1) > a:nth-child(1)");
-	By flightsButton = By.cssSelector("li.main-lnk:nth-child(2) > a:nth-child(1)");
-	By toursButton   = By.cssSelector("li.main-lnk:nth-child(3) > a:nth-child(1)");
-	By carsButton    = By.cssSelector("li.main-lnk:nth-child(4) > a:nth-child(1)");
-	By offersButton  = By.cssSelector("li.main-lnk:nth-child(5) > a:nth-child(1)");
-	By visaButton    = By.cssSelector("li.main-lnk:nth-child(6) > a:nth-child(1)");
-	By blogButton    = By.cssSelector("li.main-lnk:nth-child(7) > a:nth-child(1)");
+	private By homeButton    = By.cssSelector("a.navbar-brand:nth-child(1)");
+	private By hotelButton   = By.cssSelector("li.main-lnk:nth-child(1) > a:nth-child(1)");
+	private By flightsButton = By.cssSelector("li.main-lnk:nth-child(2) > a:nth-child(1)");
+	private By toursButton   = By.cssSelector("li.main-lnk:nth-child(3) > a:nth-child(1)");
+	private By carsButton    = By.cssSelector("li.main-lnk:nth-child(4) > a:nth-child(1)");
+	private By offersButton  = By.cssSelector("li.main-lnk:nth-child(5) > a:nth-child(1)");
+	private By visaButton    = By.cssSelector("li.main-lnk:nth-child(6) > a:nth-child(1)");
+	private By blogButton    = By.cssSelector("li.main-lnk:nth-child(7) > a:nth-child(1)");
 
 	//definindo o construtor
 	public topNavBar(WebDriver driver) {
 		this.driver = driver;
 	}
 	
-	//definindo os métodos de interação
+	//definindo os mï¿½todos de interaï¿½ï¿½o
 	public void clickHomeButton() {
 		driver.findElement(homeButton).click();
 	}
